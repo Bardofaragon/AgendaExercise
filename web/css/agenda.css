@@ -1,0 +1,176 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/03/2017, 04:48:07 PM
+    Author     : Recko
+*/
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-image: url(../images/bg1.png);
+    font-size: 1.1em;
+}
+.Tit_Principal{
+    font-size: 2em;
+    width: 20%;
+    margin: 30px 40%;
+    text-align: center;
+    padding: 0px;
+}
+.Tit_Principal::before{
+    content: "<< ";
+}
+.Tit_Principal::after{
+    content: " >>";
+}
+.left{
+    float: left;
+}
+.icon{
+    width: 7%;
+    margin: -1% 1.5% 0% 1.5%;
+}
+.introduccion{
+    width: 80%;
+    margin: 0 0 20px 0;
+}
+.clear{
+    clear: both;
+}
+.Cuerpo{
+    padding: 30px;
+    width: 70%;
+    margin: 30px 15% 80px 15%;
+    background-color: #F2F3F4;
+    -webkit-border-radius: 5px 10px;  /* Safari  */
+    -moz-border-radius: 5px 10px;     /* Firefox */
+    -webkit-box-shadow: 5px 5px 10px #999;
+    -moz-box-shadow: 5px 5px 10px #999;
+}
+h1{
+    font-size: 1.7em;
+    color: #424949;
+}
+
+p{
+    width: 80%;
+    margin-left: 10%;
+    text-align: justify;
+    
+}
+.red{
+    color: #BA2323;
+}
+.formulario{
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 50px;
+}
+.form_table{
+    margin-left: 10%;
+    width: 80%;
+}
+.form_table td{
+    width: 40%;
+}
+.form-style1 input[type="text"],
+.form-style1 input[type="time"]
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 4%;
+    margin-top: 1%;
+    border: 1px solid #ccc;
+    padding: 1%;
+    color: #555;
+    font: 85% Arial, Helvetica, sans-serif;   
+}
+.width_90{
+    width: 90%;
+}
+.form-style1 input[type="text"]:focus
+{
+    box-shadow: 0 0 5px #43D1AF;
+    padding: 1.5%;
+    border: 1px solid #43D1AF;
+    font: 100% Arial, Helvetica, sans-serif;
+}
+
+.form-style1 input[type="submit"],
+.form-style1 input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 2%;
+    background: #43D1AF;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;    
+    color: #fff;
+    width: 20%;
+    margin-left: 40%;
+}
+.form-style1 input[type="submit"]:hover,
+.form-style1 input[type="button"]:hover{
+    background: #2EBC99;
+}
+hr{
+    width: 80%;
+    margin: 60px 10%;
+}
+.Consult_table{
+    padding: 50px;
+    width: 80%;
+    margin-left: 10%;
+    
+}
+.Consult_table td{
+    border-right: solid 1px #999;
+}
+.Consult_table th{
+    background-color: #E5E7E9;
+}
+.Entrevista{
+    width: 24%;
+    margin: 2.5%;
+    float: left;
+    background-color: #fff;
+    padding-left: 18%;
+    border: #424949 dashed 1px;
+    padding-bottom: 20px;
+}
+.Entrevista::before{
+    content: '';
+    width: 8%;
+    height: 90px;
+    position: absolute;
+    margin-left: -11%;
+    margin-top: 20px;
+    background-image: url(../images/profile.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.subTitulo{
+    font-size: .8em;
+    color: #DD8812;
+}

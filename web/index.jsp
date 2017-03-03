@@ -13,10 +13,6 @@
     </head>
     <body>
         <form action="AgendaTable">
-            Usuario:<br>
-            <input type="text" name="user"><br>
-            Agenda:<br>
-            <input type="text" name="agenda"<br>
             <input type="submit">
         </form>
     </body>

@@ -13,7 +13,7 @@ CREATE TABLE Interviewer(
 );
 CREATE TABLE Interviewed(
   interviewed_id INT NOT NULL AUTO_INCREMENT,
-  interviewed_name VARCHAR(50) NOT NULL,
+  interviewed_name VARCHAR(50) NOT NULL,x
   PRIMARY KEY (interviewed_id)
 );
 CREATE TABLE Agenda(

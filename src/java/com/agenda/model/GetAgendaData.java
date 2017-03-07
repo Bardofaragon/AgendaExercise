@@ -35,7 +35,12 @@ public class GetAgendaData {
       Class.forName(JDBC_DRIVER);
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
       stmt = conn.createStatement();
-      String sql = "select agenda_id, Appointment.place_id, interview_start, interview_end, interviewer_name, interviewed_name from appointment, place, hours, interviewer, interviewed where place.place_id = appointment.place_id AND hours.hours_id = appointment.hours_id AND interviewer.interviewer_id = appointment.interviewer_id AND interviewed.interviewed_id = appointment.interviewed_id ORDER BY agenda_id,interview_start;";
+      String sql = "select agenda_id, Appointment.place_id, interview_start, interview_end, interviewer_name, interviewed_name from appointment, place, hours, interviewer, interviewed where place.place_id = appointment.place_id AND hours.hours_id = appointment.hours_id AND interviewer.interviewer_id = appointment.interviewer_id AND interviewed.interviewed_id = appointment.interviewed_id ";
+      
+      if(user != null && !user.equals("")){
+          sql += "AND interviewer.interviewer_id = " + user + " ";
+      }
+      sql+="ORDER BY agenda_id,interview_start;";
       ResultSet rs = stmt.executeQuery(sql);
       while (rs.next()) {
         int agenda = rs.getInt("agenda_id");

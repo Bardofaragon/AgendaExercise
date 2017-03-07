@@ -33,7 +33,7 @@ public class AgendaGenereator extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("user");
+        String user = request.getParameter("interviewer_name");
         GetAgendaData agenda = new GetAgendaData();
         List<Appointment> result = agenda.getAgendaOf(user);
         request.setAttribute("agenda",result);

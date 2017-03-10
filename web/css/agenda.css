@@ -46,6 +46,15 @@ body{
     width: 80%;
     margin: 0 0 20px 0;
 }
+.Div_ConsultarCitas, .Div_GeneraCitas{
+    width: 43%;
+    padding: 1%;
+    margin: 0% 2% 1% 2%;
+    float: left;
+    background: #fff;
+    border: #49A3EC dashed 1px;
+    min-height: 260px;
+}
 .clear{
     clear: both;
 }
@@ -63,7 +72,10 @@ h1{
     font-size: 1.7em;
     color: #424949;
 }
-
+h2{
+    font-size: 1.5em;
+    color: #424949;
+}
 p{
     width: 80%;
     margin-left: 10%;
@@ -106,6 +118,10 @@ p{
 }
 .width_90{
     width: 90%;
+}
+.width_70{
+    width: 70%;
+    margin-left: 15%;
 }
 .form-style1 input[type="text"]:focus
 {
@@ -173,4 +189,12 @@ hr{
 .subTitulo{
     font-size: .8em;
     color: #DD8812;
+}
+.RadioButton{
+    float: left;
+    width: 20%;
+    margin: 5%;
+}
+#Con_Dia, #Cons_Salon{
+    display: none;
 }

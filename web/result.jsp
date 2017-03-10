@@ -30,32 +30,13 @@
                     <br><span class="subTitulo">Horario: </span><%out.print(cita.getStart_hour() +"-"+ cita.getEnd_hour());%>
                     <br><span class="subTitulo">Entrevistador: </span><%out.print(cita.getInterviewer_name());%>
                     <br><span class="subTitulo">Entrevistado: </span><%out.print(cita.getInterviewed_name());%>
-                    <br><span class="subTitulo">Agenda: </span><%out.print(cita.getAgenda());%>
+                    <br><span class="subTitulo">Día: </span><%out.print(cita.getDay());%>
                     <br><span class="subTitulo">Salón: </span><%out.print(cita.getPlace());%>
                 </div>
             </div>    
             <%
                 }
             %>
-            <hr>
-            <H1>Consultar Entrevistas...</H1>
-            <p>Para visualizar las entrevistas agendadas que tiene un entrevistador en particular, favor de ingresar el número de empleado asignado a este.</p>
-            <div class="formulario">
-                <form class="form-style1" action="AgendaTable" method="get">
-                    <table class="form_table">
-                        <tr>
-                            <td><label for="interviewer_name">Entrevistador (Número de Empleado): </label></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input class="width_90" type="text" name="interviewer_name" id="interviewer_name" placeholder="Número de empleado" title="Número de empleado"/>
-                            </td>
-                        </tr>
-                    </table>
-                    <br/>
-                    <input type="submit" title="Da clic para agendar entrevista" value="Consultar">
-                </form>
-            </div>
             <hr>
             <div class="clear"></div>
         </div>

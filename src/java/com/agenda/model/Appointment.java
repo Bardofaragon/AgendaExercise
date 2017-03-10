@@ -5,42 +5,55 @@
  */
 package com.agenda.model;
 
+import java.sql.Date;
 /**
  *
  * @author Baradofaragon
  */
 public class Appointment {
-    private String agenda;
+    private Date day;
     private String place;
     private String start_hour;
     private String end_hour;
     private String interviewer_name;
     private String interviewed_name;
+    private int interviewer_id;
 
-    public String getAgenda() {
-        return agenda;
+    public int getInterviewer_id() {
+        return interviewer_id;
     }
 
-    public void setAgenda(String agenda) {
-        this.agenda = agenda;
+    public void setInterviewer_id(int interviewer_id) {
+        this.interviewer_id = interviewer_id;
     }
 
-    public Appointment(String agenda, String place, String start_hour, String end_hour, String interviewer_name, String interviewed_name) {
-        this.agenda = agenda;
+    public Date getDay() {
+        return day;
+    }
+
+    public void setDay(Date day) {
+        this.day = day;
+    }
+
+    public Appointment(Date day, String place, String start_hour, String end_hour, String interviewer_name, String interviewed_name, int interviewer_id) {
+        this.day = day;
+        this.place = place;
+        this.start_hour = start_hour;
+        this.end_hour = end_hour;
+        this.interviewer_name = interviewer_name;
+        this.interviewed_name = interviewed_name;
+        this.interviewer_id = interviewer_id;
+    }
+
+    public Appointment(Date day, String place, String start_hour, String end_hour, String interviewer_name, String interviewed_name) {
+        this.day = day;
         this.place = place;
         this.start_hour = start_hour;
         this.end_hour = end_hour;
         this.interviewer_name = interviewer_name;
         this.interviewed_name = interviewed_name;
     }
-    public Appointment(String place, String start_hour, String end_hour, String interviewer_name, String interviewed_name) {
-        this.place = place;
-        this.start_hour = start_hour;
-        this.end_hour = end_hour;
-        this.interviewer_name = interviewer_name;
-        this.interviewed_name = interviewed_name;
-    }
-
+    
     public String getPlace() {
         return place;
     }

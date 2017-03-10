@@ -5,15 +5,13 @@
  */
 package com.agenda.web;
 
-import com.agenda.model.Appointment;
 import com.agenda.dao.AppointmentDAO;
-import com.agenda.model.DateUtil;
+import com.agenda.model.Appointment;
+import com.agenda.model.MakeAgenda;
 import java.io.IOException;
-import java.net.URLDecoder;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Baradofaragon
  */
-public class AgendaGenereator extends HttpServlet {
+public class MakeAgendaServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,38 +35,19 @@ public class AgendaGenereator extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-            try{
-            String type = request.getParameter("btn_TipoConsulta");
-            AppointmentDAO agenda = new AppointmentDAO();
-            List<Appointment> result = null;
-            if(type.equals("Entrevistador")){
-                String filter = request.getParameter("Par_ConsultaE");
-                result = agenda.getAppointmentsByIr(filter);
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+       try{
+            MakeAgenda agenda = new MakeAgenda();
+            AppointmentDAO agendaDAO = new AppointmentDAO();
+            if(agendaDAO.isEmpty()){
+                agenda.createAgenda();
             }
-            else if(type.equals("Dia")){
-                String filter = request.getParameter("Par_ConsultaD");
-                SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-                filter = URLDecoder.decode(filter,"UTF-8");
-                try{
-                    Date date = formatter.parse(filter);
-                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-                    result = agenda.getAppointmentsByDay(sqlDate+"");
-                    System.out.println(sqlDate + "");
-                }
-                catch(ParseException e){e.printStackTrace();}
-                //result = agenda.getAppointments();
-               
-            }
-            else if(type.equals("Salon")){
-                String filter = request.getParameter("Par_ConsultaS");
-                result = agenda.getAppointmentsByPlace(filter);
-            }
-            request.setAttribute("agenda",result);
-            RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("consultarCitas_Formu.jsp");
             view.forward(request,response);
         }catch(SQLException sqlE){
-        }catch(ParseException parseE){}
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
